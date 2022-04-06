@@ -141,11 +141,12 @@ public class MatchManager : MonoBehaviour
 
     private void OnGetMatch(GetMatchResult result)
     {
+        //queueStatusText.text = $"{result.Members[0].Entity.Id} vs {result.Members[1].Entity.Id}";
         queueStatusText.text = $"{result.Members[0].Entity.Id} vs {result.Members[1].Entity.Id}";
     }
 
     public void LoadSceneGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
